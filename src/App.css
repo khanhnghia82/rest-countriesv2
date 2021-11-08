@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html {  
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.darkTheme {
+  background-color: rgba(7, 49, 85, 0.527);
+  color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.lightTheme {
+  background-color: #fff;
+  color: #111;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+:root {
+  --IconSwitchColor: hsl(51, 96%, 61%);
+  --ToggleButtonBackground: hsl(208, 59%, 41%);
+  --SelectOptionBackground: RGB(1, 147, 207);
+  --TextShadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
