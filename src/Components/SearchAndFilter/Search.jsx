@@ -44,8 +44,7 @@ export default React.memo(Search);
 const SearchPane = styled.div`
   max-width: 320px;
   width: 100%;
-  margin-top: 20px;
-  margin-left: 12px;
+  margin-top: 20px;  
   @media screen and (max-width: 600px) {
     margin-left: 0px;    
     max-width: 100%;    

@@ -23,7 +23,6 @@ const SearchAndFilterPane = styled.div`
   @media screen and (max-width: 600px) {
     flex-direction: column;
     align-items: flex-start;   
-    margin-left: 12px;
-    margin-right: 12px;
+    
   }
 `

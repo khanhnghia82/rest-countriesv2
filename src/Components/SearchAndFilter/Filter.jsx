@@ -74,8 +74,7 @@ export default React.memo(Filter);
 const FitlerPane = styled.div`
   max-width: 160px;
   width: 100%;
-  margin-top: 20px;
-  margin-right: 12px;
+  margin-top: 20px;  
   @media screen and (max-width: 600px) {
     margin-left: 0px;    
     max-width: 100%;    

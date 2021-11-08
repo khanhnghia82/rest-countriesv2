@@ -31,9 +31,7 @@ function Countries(props) {
         <ScrollBar
           style={{
             maxHeight: "68vh",
-            overflow: "hidden",
-            marginRight: "10px",
-            paddingRight: "2px",
+            overflow: "hidden"            
           }}
         >
           <CountriesContainer>
@@ -52,41 +50,41 @@ function Countries(props) {
 
 export default React.memo(Countries);
 
-const CountriesContainer = styled.div`
-  width: 100%;
-  columns: 4;
-  gap: 12px;
-  padding: 4px 1px;
-  margin-left: 12px;
-
-  @media screen and (max-width: 1024px) {
-    columns: 3;
-    gap: 10px;
-  }
-  @media screen and (max-width: 768px) {
-    columns: 2;
-    gap: 8px;
-  }
-  @media screen and (max-width: 480px) {
-    columns: 1;
-  }
-`;
 // const CountriesContainer = styled.div`
 //   width: 100%;
-//   display: grid;
-//   grid-template-columns: repeat(4, auto);
+//   columns: 4;
 //   gap: 12px;
 //   padding: 4px 1px;
+//   margin-left: 12px;
 
 //   @media screen and (max-width: 1024px) {
-//     grid-template-columns: repeat(3, auto);
+//     columns: 3;
 //     gap: 10px;
 //   }
 //   @media screen and (max-width: 768px) {
-//     grid-template-columns: repeat(2, auto);
+//     columns: 2;
 //     gap: 8px;
 //   }
 //   @media screen and (max-width: 480px) {
-//     grid-template-columns: repeat(1, auto);
+//     columns: 1;
 //   }
 // `;
+const CountriesContainer = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 12px;
+  padding: 4px 1px;    
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, auto);
+    gap: 8px;
+  }
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, auto);
+  }
+`;
