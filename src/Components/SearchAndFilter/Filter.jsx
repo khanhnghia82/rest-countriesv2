@@ -27,12 +27,12 @@ function Filter(props) {
     }else setValueOption('All')
   },[slug.regionName])
 
-  const handleOptions = (e) => {
+  const handleOptions = useCallback((e) => {
     //(refSelect.current.contains(e.target))
     // == true if click in range refSelect
     // == false if click out range refSelect
-    setIsShowOptions(refSelect.current.contains(e.target));
-  };
+    if (refSelect.current) setIsShowOptions(refSelect.current.contains(e.target));
+  },[refSelect.current]);
 
   useEffect(() => {
     if (isShowOptions) {
@@ -56,8 +56,8 @@ function Filter(props) {
         <SelectPane>
           <Select
             className={themeContext.theme}
-            onClick={handleOptions}
             ref={refSelect}
+            onClick={handleOptions}
           >
             <h3>{valueOption}</h3>
             <FaChevronDown />

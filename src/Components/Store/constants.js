@@ -1,0 +1,1 @@
+export const LIMIT_COUNTRIES_VIEW = 12;

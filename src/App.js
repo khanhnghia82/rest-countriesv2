@@ -2,12 +2,11 @@ import styled from "styled-components";
 import Footer from "./Components/Footer";
 import React, { useContext } from "react";
 import Header from "./Components/Header/Header";
-import Countries from "./Components/Countries/Countries";
 import CountryDetail from "./Components/CountryDetail/CountryDetail";
-import SearchAndFilter from "./Components/SearchAndFilter/SearchAndFilter";
 import { ThemeContext } from "./Components/ThemeContext/ThemeContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import Pages from "./Components/Pages/Pages";
 
 const HOME_PATH = process.env.REACT_APP_PUBLIC_URL;
 
@@ -20,24 +19,14 @@ function App(props) {
         <Header />
         <ContentContainer>
           <Switch>
-            <Route exact path={HOME_PATH}>
-              <SearchAndFilter />
-              <Countries />
-            </Route>
+            <Route exact path={HOME_PATH} component={Pages}/>
 
-            <Route path={`${HOME_PATH}region/:regionName`}>
-              <SearchAndFilter />
-              <Countries />
-            </Route>
+            <Route path={`${HOME_PATH}region/:regionName`} component={Pages}/>
 
-            <Route path={`${HOME_PATH}search/:name`}>
-              <SearchAndFilter />
-              <Countries />
-            </Route>
+            <Route path={`${HOME_PATH}search/:name`} component={Pages}/>
 
-            <Route path={`${HOME_PATH}country/:countryName`}>
-              <CountryDetail />
-            </Route>
+            <Route path={`${HOME_PATH}country/:countryName`} component={CountryDetail}/>         
+            
           </Switch>
         </ContentContainer>
         <Footer />

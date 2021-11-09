@@ -19,9 +19,10 @@ export const getCountries = () => async (dispatch) => {
         }));
         dispatch({ type: Types.GET_COUNTRIES, payload: countries });
         dispatch({ type: Types.SET_LOADING, payload: false });
+        dispatch({ type: Types.GET_TOTAL_COUNTRIES, payload: countries.length });
       })
       .catch((err) => {
-        console.log("err", err);
+        console.log("get countries api error: ", err);
       });
   } catch (error) {
     console.log("get countries api error: ", error);
@@ -59,6 +60,8 @@ export const getCountriesByName = (name) => async dispatch => {
       }))
       dispatch({ type: Types.SET_LOADING, payload: false});
       dispatch({ type: Types.GET_COUNTRIES_BY_NAME, payload: countries });
+      dispatch({ type: Types.GET_TOTAL_COUNTRIES, payload: countries.length });
+
     })
     .catch((err) => {
       console.log("get countries name api error: ", err);
@@ -81,6 +84,7 @@ export const getCountriesByRegion = (region) => async dispatch => {
       }))
       dispatch({ type: Types.SET_LOADING, payload: false});
       dispatch({ type: Types.GET_COUNTRIES_BY_NAME, payload: countries });
+      dispatch({ type: Types.GET_TOTAL_COUNTRIES, payload: countries.length });
     })
     .catch((err) => {
       console.log("get countries name api error: ", err);

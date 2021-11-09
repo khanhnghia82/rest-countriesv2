@@ -3,6 +3,8 @@ const CountriesReducerInitialState = {
   countries: [],
   country: null,
   loading: true,  
+  totalCountries: 0,
+  startPage: 1
 }
 const CountriesReducer = (state = CountriesReducerInitialState, action) => {
   const { type, payload } = action;
@@ -23,7 +25,10 @@ const CountriesReducer = (state = CountriesReducerInitialState, action) => {
       return {...state, loading: payload}      
    
     case Types.RESET_COUNTRY:
-      return {...state, country: null}
+      return {...state, country: null}   
+
+    case Types.GET_TOTAL_COUNTRIES:      
+      return {...state, totalCountries: payload}
       
     default:
       return state

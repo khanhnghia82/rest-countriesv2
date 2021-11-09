@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
-import "./country.css";
 
 function Country(props) {
   const themeContext = useContext(ThemeContext);
@@ -41,6 +40,7 @@ const CountryCard = styled.div`
   overflow: hidden;
   border-radius: 4px;
   margin-bottom: 12px; 
+  user-select: none;
   &:hover {
     filter: brightness(0.9);
   }

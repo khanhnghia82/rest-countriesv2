@@ -2,21 +2,28 @@ import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { MdSearch } from "react-icons/md";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
-import { useParams } from "react-router";
+import { useParams, useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
 const HOME_PATH = process.env.REACT_APP_PUBLIC_URL;
 
 function Search(props) {
   const themeContext = useContext(ThemeContext);
-  const [ valueInput, setValueInput ] = useState('');
-  
+  const [ valueInput, setValueInput ] = useState('');  
   const slug = useParams();  
+  const history = useHistory();  
+
 
   useEffect(() => {
     if (slug.name && slug.name!=='') setValueInput(slug.name);
     else setValueInput('')
-  },[slug.name]);    
+  },[slug.name]);      
+
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      (valueInput!=='') ? history.push(`${HOME_PATH}search/${valueInput}`) : history.push(HOME_PATH)
+    }
+  }
 
   return (
     <SearchPane>
@@ -26,7 +33,8 @@ function Search(props) {
           type="text" 
           placeholder="Input the and enter to search..."
           onChange={e => setValueInput(e.target.value)}
-          value={valueInput}         
+          value={valueInput}
+          onKeyDown={handleKeyDown}
         />
         <Link 
           to={valueInput!==''? `${HOME_PATH}search/${valueInput}`: HOME_PATH} 
